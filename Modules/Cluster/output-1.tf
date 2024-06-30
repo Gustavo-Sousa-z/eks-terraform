@@ -13,11 +13,11 @@ output "oidc_to_controller" {
 }
 
 output "eks_cluster_endpoint" {
-  description = "Output endpoint do cluster que pode ser aplicado na criacao no ingress utilizando ELB"
+  description = "Output endpoint do cluster para autenticação no provider Kubernetes"
   value       = aws_eks_cluster.eks_cluster.endpoint
 }
 
 output "eks_cluster_certificate" {
-  description = "Output certificado do cluster que pode ser aplicado na criacao no ingress utilizando ELB"
+  description = "Output certificado do cluster para autenticação no provider Kubernetes"
   value       = aws_eks_cluster.eks_cluster.certificate_authority[0].data
 }

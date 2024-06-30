@@ -19,3 +19,9 @@ module "manage_node_group" {
   cluster_name   = module.cluster.cluster_name_to_mng
   tags           = local.tags
 }
+module "ingres_alb" {
+  source       = "./Modules/aws-load-balancer-controller"
+  tags         = local.tags
+  oidc         = module.cluster.oidc_to_controller
+  cluster_name = module.cluster.cluster_name_to_mng
+}
